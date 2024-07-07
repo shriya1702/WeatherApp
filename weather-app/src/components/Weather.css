@@ -80,9 +80,29 @@
     padding: 30px;
   }
 
+  .search-bar{
+    position: relative;
+    height: 76px;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+
+
+  }
+
   .search-bar input {
-    height: 6vh;
-    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 155px 0 65px;
+    background-color: transparent;
   }
 
   .search-bar img {
@@ -123,7 +143,7 @@
   }
 
   .search-bar input {
-    height: 5vh;
+    height: 76px;
     font-size: 14px;
     padding-left: 15px;
   }
@@ -132,6 +152,33 @@
     width: 35px;
     padding: 8px;
   }
+
+  @media screen and (max-width: 500px) {
+    .search-bar {
+      flex-direction: row; /* Ensures the input and icon stay in a row */
+      height: 50px;
+      margin: 0 8px;
+      width: 100%;
+      max-width: 500px; /* Added this to avoid stretching on very small screens */
+      border-radius: 8px;
+      gap: 8px;
+    }
+  
+    .search-bar input {
+      height: 100%;
+      font-size: 14px;
+      padding-left: 15px;
+      flex: 1; /* Takes up remaining space in the flex container */
+    }
+  
+    .search-bar img {
+      width: 35px;
+      padding: 8px;
+    }
+  }
+  
+
+  
 
   .weather-icon {
     width: 100px;

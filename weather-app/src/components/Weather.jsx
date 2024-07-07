@@ -68,10 +68,16 @@ const Weather = () => {
     search("london");
   }, []);
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      search(inputRef.current.value);
+    }
+  };
+
   return (
     <div className='weather'>
       <div className='search-bar'>
-        <input ref={inputRef} type="text" placeholder='Search'  />
+        <input ref={inputRef} type="text" placeholder='Search' onKeyDown={handleKeyDown} />
         <img src={search_icon} alt="Search Icon" onClick={()=>search(inputRef.current.value)} />
       </div>
       { weatherData ? <>
